@@ -1,8 +1,8 @@
 <!-- markdownlint-disable -->
 ## Notes
 
-**Editor**  
-neovim editor lsp setup: use mason to install `typescript-language-server` and `eslint-lsp`
+**Editor**  neovim  
+lsp setup: use mason to install `typescript-language-server` and `eslint-lsp`
 
 **Quickstart**  
 [tutorial-tic-tac-toe](https://zh-hans.react.dev/learn/tutorial-tic-tac-toe)
