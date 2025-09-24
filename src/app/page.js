@@ -1,5 +1,12 @@
 import Image from "next/image";
 
+import Board from "./components/square.js";
+
 export default function Home() {
-  return <button className="square">X</button>;
+  return (
+    <div>
+      <h1>井字棋</h1>
+      <Board />
+    </div>
+  )
 }
