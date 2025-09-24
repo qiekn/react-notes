@@ -1,6 +1,4 @@
-import Image from "next/image";
-
-import Board from "./components/square.js";
+import Board from "./components/board.js";
 
 export default function Home() {
   return (
