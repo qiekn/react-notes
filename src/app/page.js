@@ -14,7 +14,7 @@ export default function Home() {
           🎮 Game: Tic Tac Toe
         </Link>
         <Link
-          href="/dg-lab"
+          href="http://47.100.237.182:3000/"
           className="block w-full max-w-xs mx-auto mb-8 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-200 text-center"
         >
           DG Lab WebSocket Control Pannel
