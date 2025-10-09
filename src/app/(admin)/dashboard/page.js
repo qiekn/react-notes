@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export const runtime = 'edge';
+
 export default function Dashboard() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-100 px-4">
