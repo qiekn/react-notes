@@ -1,11 +1,16 @@
-"use client"; // 带事件处理函数的交互逻辑只能在客户端组件中使用。
+"use client";
 
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
-  return <button className="square" onClick={onSquareClick}>
-    {value}
-  </button>;
+  return (
+    <button
+      className="w-24 h-24 border-2 border-gray-300 bg-white text-4xl font-bold text-gray-700 hover:bg-gray-50 active:bg-gray-100 transition-colors duration-200 flex items-center justify-center text-center rounded-md shadow-sm"
+      onClick={onSquareClick}
+    >
+      {value}
+    </button>
+  );
 }
 
 export default function Board() {
@@ -34,25 +39,40 @@ export default function Board() {
     status = "下一步是 " + (xIsNext ? "X" : "O");
   }
 
+  const resetGame = () => {
+    setSquares(Array(9).fill(null));
+    setXIsNext(true);
+  };
+
   return (
-    <>
-      <div className="status">{status}</div>
-      <div className="board-row">
-        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+    <div className="flex flex-col items-center">
+      <div className="status text-2xl font-semibold text-gray-700 mb-6 bg-white px-6 py-3 rounded-lg shadow-md">
+        {status}
       </div>
-      <div className="board-row">
-        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+      <div className="flex flex-col space-y-0 bg-white rounded-lg shadow-lg p-2">
+        <div className="board-row flex">
+          <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+          <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+          <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+        </div>
+        <div className="board-row flex">
+          <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+          <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+          <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+        </div>
+        <div className="board-row flex">
+          <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+          <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+          <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+        </div>
       </div>
-      <div className="board-row">
-        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-      </div>
-    </>
+      <button
+        className="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-200"
+        onClick={resetGame}
+      >
+        重置游戏
+      </button>
+    </div>
   );
 }
 
