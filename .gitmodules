@@ -1,0 +1,4 @@
+[submodule "src/app/(xxx)"]
+	path = src/app/(xxx)
+	url = git@github.com:qiekn/xt.git
+	branch = sub-page
